@@ -19,8 +19,6 @@ public class KlarnautService {
 
     public Klarnaut saveKlarnaut(Klarnaut klarnaut){
 //        klarnaut.setPassword(passwordEncoder.encode(klarnaut.getPassword()));
-        klarnaut.setPassword(klarnaut.getPassword());
-        klarnaut.setRole(Role.USER);
 
         return klarnautRepository.save(klarnaut);
     }
@@ -36,7 +34,6 @@ public class KlarnautService {
     public void makeAdmin(String userName){
         Klarnaut klarnaut = klarnautRepository.findByUserName(userName)
                 .orElseThrow(() -> new NoKlarnautFoundException("not found"));
-        klarnaut.setRole(Role.ADMIN);
         klarnautRepository.save(klarnaut);
     }
 

@@ -22,18 +22,11 @@ public class Klarnaut {
     @Column(name = "user_name",nullable = false)
     private String userName;
 
-    @Column(name = "password",nullable = false)
-    private String password;
-
     @Column(name = "email",nullable = false)
     private String email;
 
     @Column(name = "phone_number",nullable = false)
     private String phoneNumber;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "role",nullable = false)
-    private Role role;
 
     //FOR accepter
     @Column(name = "accepter_date_begin",nullable = false)
